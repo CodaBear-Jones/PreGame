@@ -21,9 +21,9 @@ class Database {
             let id = Expression<Int>("ID")
             let name = Expression<String?>("name")
             
-//            for game in try db.prepare(games) {
-//                print("id: \(game[id]), name: \(game[name])")
-//            }
+            for game in try db.prepare(games) {
+                print("id: \(game[id]), name: \(game[name])")
+            }
         } catch {
             print("DB Error")
         }
