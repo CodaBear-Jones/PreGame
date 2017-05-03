@@ -1,6 +1,6 @@
 //
 //  GameDetailViewController.swift
-//  Game Bible
+//  PreGame
 //
 //  Created by Nicholas Jones on 2017-02-23.
 //  Copyright © 2017 Nicholas Jones. All rights reserved.
