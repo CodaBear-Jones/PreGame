@@ -11,15 +11,15 @@ import UIKit
 class GameTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBAction func searchButton(_ sender: UIBarButtonItem) {
+        let searchBar = UISearchBar()
+        self.navigationItem.titleView = searchBar
+    }
     
     // Reference other classes
     var gameData : GameData = GameData()
     var games : [Game] = []
     var database : Database = Database()
-    
-    // Declare the search variables
-    var searchController : UISearchController!
-    var searchResults : [Game] = []
     
     override func viewDidLoad() {
         
@@ -30,17 +30,7 @@ class GameTableViewController: UIViewController, UITableViewDataSource, UITableV
         
         // Make a new reference to the games data
         games = gameData.games
-        
-        // Update the search bar
-        searchController = UISearchController(searchResultsController: nil)
-        tableView.tableHeaderView = searchController.searchBar
-        searchController.searchBar.placeholder = "Search Games"
-        searchController.searchBar.tintColor = UIColor.white
-        searchController.searchBar.barTintColor = UIColor(red: 236.0/255.0, green: 240.0/255.0, blue: 241.0/255.0, alpha: 1.0)
-        
-        // Creat a point to off set the table view, hiding the search bar under the navigation controller
-        let point = CGPoint(x: 0, y:(self.navigationController?.navigationBar.frame.size.height)!)
-        self.tableView.setContentOffset(point, animated: true)
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -77,27 +67,10 @@ class GameTableViewController: UIViewController, UITableViewDataSource, UITableV
         return true
     }
     
-    //    func filterContent(for searchText: String) {
-    //        searchResults = games.filter({(Game) -> Bool in if let name = games.name {
-    //            let isMatch = name.localizedCaseInsensitiveContains(searchText)
-    //            return isMatch
-    //            }
-    //            return false
-    //        })
-    //    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         // Return number of rows in section
-        return games.count
-        
-        // Enter the search screen
-        if searchController.isActive {
-            return searchResults.count
-        } else {
-            return games.count
-        }
-        
+        return database.gameNames.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -105,12 +78,12 @@ class GameTableViewController: UIViewController, UITableViewDataSource, UITableV
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! GameTableViewCell
         
         // Update the cell content for each row that was returned
-        cell.nameLabel.text = games[indexPath.row].name
-        cell.thumbnailImageView.image = UIImage(named: games[indexPath.row].image)
-        cell.playersLabel.text = games[indexPath.row].players
+        cell.nameLabel.text = database.gameNames[indexPath.row]
+        //cell.thumbnailImageView.image = UIImage(named: games[indexPath.row].image)
+        //cell.playersLabel.text = games[indexPath.row].players
         //descriptionLabel.text = games[indexPath.row].description
         //instructionsLabel.text = games[indexPath.row].instructions
-        cell.materialsLabel.text = games[indexPath.row].materials
+        //cell.materialsLabel.text = games[indexPath.row].materials
         
         return cell
         

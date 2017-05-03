@@ -106,7 +106,13 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="bcb-1N-32H" secondAttribute="bottom" id="xUs-oC-0pH"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Games" id="iht-yS-MVJ"/>
+                    <navigationItem key="navigationItem" title="Games" id="iht-yS-MVJ">
+                        <barButtonItem key="leftBarButtonItem" image="searchIcon" id="xqj-FW-QxL">
+                            <connections>
+                                <action selector="searchButton:" destination="BYZ-38-t0r" id="GtJ-2h-3xw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="bcb-1N-32H" id="Afc-7B-hUP"/>
                     </connections>
@@ -673,8 +679,9 @@
         <image name="filterSelected" width="28" height="28"/>
         <image name="games" width="28" height="28"/>
         <image name="gamesSelected" width="28" height="28"/>
+        <image name="searchIcon" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="nHp-zu-mBI"/>
+        <segue reference="Gjd-cM-v67"/>
     </inferredMetricsTieBreakers>
 </document>

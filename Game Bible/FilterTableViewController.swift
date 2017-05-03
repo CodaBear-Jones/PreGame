@@ -14,6 +14,7 @@ class FilterTableViewController: UIViewController, UITableViewDataSource, UITabl
     
     // Reference other classes
     var gameData : GameData = GameData()
+    
     var games : [Game] = []
     var filteredGames : [Game] = []
     

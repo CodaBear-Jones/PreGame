@@ -11,7 +11,10 @@ import SQLite
 
 class Database {
     
-    func printDB(){
+    var gameNames : [String] = []
+    
+    
+    func printDB() {
         
         do {
             let db = try Connection((Bundle.main.path(forResource: "DrinkingGameDatabase", ofType: "sqlite3"))!)
@@ -25,15 +28,6 @@ class Database {
                 //print("id: \(game[id]), name: \(game[name])")
                 
                 let optionalGameNames : [String?] = [game[name]]
-                let optionalGameIDs : [Int?] = [game[id]]
-                
-                for gameIDs in optionalGameIDs {
-                    guard  let gameIDs = gameIDs else {
-                        print("Was not able to unwrap game ID's")
-                        continue
-                    }
-                    print(gameIDs)
-                }
                 
                 for gameNames in optionalGameNames {
                     
@@ -41,13 +35,18 @@ class Database {
                         print("Was not able to unwrap game names")
                         continue
                     }
-                    print(gameNames, "\n")
+                    
+                    self.gameNames += [gameNames]
+            
                 }
-                
+    
             }
+            
+             print(gameNames, "\n")
             
         } catch {
             print("DB Error")
         }
+        
     }
 }

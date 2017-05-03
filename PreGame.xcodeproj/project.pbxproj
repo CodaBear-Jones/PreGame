@@ -27,8 +27,8 @@
 		F60F4DDB1E522B0C000594FD /* Game.png in Resources */ = {isa = PBXBuildFile; fileRef = F60F4DDA1E522B0C000594FD /* Game.png */; };
 		F613EBC21EB6924900B40962 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F613EBB51EB6923800B40962 /* SQLite.framework */; };
 		F62A28A81E75C14A00DF0805 /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A28A71E75C14A00DF0805 /* CategoryTableViewController.swift */; };
+		F658B0361EB95FFD00DD72E7 /* DrinkingGameDatabase.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = F658B0351EB95FFD00DD72E7 /* DrinkingGameDatabase.sqlite3 */; };
 		F66A119B1E8D344300616BA8 /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66A119A1E8D344300616BA8 /* GameData.swift */; };
-		F67518C21EB68E8F00EC9115 /* DrinkingGameDatabase.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = F67518C11EB68E8F00EC9115 /* DrinkingGameDatabase.sqlite3 */; };
 		F67518C41EB68EFC00EC9115 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67518C31EB68EFC00EC9115 /* Database.swift */; };
 		F6AE9E221E622AFD00663261 /* GameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AE9E211E622AFD00663261 /* GameTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -113,8 +113,8 @@
 		F60F4DDA1E522B0C000594FD /* Game.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Game.png; sourceTree = "<group>"; };
 		F613EBAA1EB6923800B40962 /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = "../../../../Downloads/SQLite.swift-master 2/SQLite.xcodeproj"; sourceTree = "<group>"; };
 		F62A28A71E75C14A00DF0805 /* CategoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryTableViewController.swift; path = ../CategoryTableViewController.swift; sourceTree = "<group>"; };
+		F658B0351EB95FFD00DD72E7 /* DrinkingGameDatabase.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = DrinkingGameDatabase.sqlite3; sourceTree = "<group>"; };
 		F66A119A1E8D344300616BA8 /* GameData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameData.swift; sourceTree = "<group>"; };
-		F67518C11EB68E8F00EC9115 /* DrinkingGameDatabase.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; name = DrinkingGameDatabase.sqlite3; path = ../../../../DrinkingGameDatabase.sqlite3; sourceTree = "<group>"; };
 		F67518C31EB68EFC00EC9115 /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		F6AE9E211E622AFD00663261 /* GameTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -156,8 +156,8 @@
 		F60F4DB51E51F760000594FD = {
 			isa = PBXGroup;
 			children = (
-				F60F4DD31E51F7B4000594FD /* Documentation */,
 				F60F4DC01E51F761000594FD /* Game Bible */,
+				F60F4DD31E51F7B4000594FD /* Documentation */,
 				F60F4DBF1E51F761000594FD /* Products */,
 				F602846F1EB684D500BFFD3E /* Frameworks */,
 				F613EBAA1EB6923800B40962 /* SQLite.xcodeproj */,
@@ -175,7 +175,7 @@
 		F60F4DC01E51F761000594FD /* Game Bible */ = {
 			isa = PBXGroup;
 			children = (
-				F67518C11EB68E8F00EC9115 /* DrinkingGameDatabase.sqlite3 */,
+				F658B0351EB95FFD00DD72E7 /* DrinkingGameDatabase.sqlite3 */,
 				F60CFF271E6B37250045D6D7 /* Classes */,
 				F60F4DC51E51F761000594FD /* Main.storyboard */,
 				F60F4DCA1E51F761000594FD /* LaunchScreen.storyboard */,
@@ -342,7 +342,7 @@
 			files = (
 				F60F4DCC1E51F761000594FD /* LaunchScreen.storyboard in Resources */,
 				F60F4DD91E522B02000594FD /* Home & Browse.png in Resources */,
-				F67518C21EB68E8F00EC9115 /* DrinkingGameDatabase.sqlite3 in Resources */,
+				F658B0361EB95FFD00DD72E7 /* DrinkingGameDatabase.sqlite3 in Resources */,
 				F60F4DDB1E522B0C000594FD /* Game.png in Resources */,
 				F60F4DC91E51F761000594FD /* Assets.xcassets in Resources */,
 				F60F4DC71E51F761000594FD /* Main.storyboard in Resources */,
