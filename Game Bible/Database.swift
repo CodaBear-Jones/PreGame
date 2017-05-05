@@ -12,17 +12,16 @@ import SQLite
 class Database {
     
     var gameNames : [String] = []
+    let games = Table("Games")
+    
+    let id = Expression<Int>("ID")
+    let name = Expression<String?>("name")
     
     
     func printDB() {
         
         do {
             let db = try Connection((Bundle.main.path(forResource: "DrinkingGameDatabase", ofType: "sqlite3"))!)
-            
-            let games = Table("Games")
-            
-            let id = Expression<Int>("ID")
-            let name = Expression<String?>("name")
             
             for game in try db.prepare(games) {
                 //print("id: \(game[id]), name: \(game[name])")

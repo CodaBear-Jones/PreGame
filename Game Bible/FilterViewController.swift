@@ -10,6 +10,7 @@
 
 
 import UIKit
+import SQLite
 
 class FilterViewController: UIViewController, BEMCheckBoxDelegate {
     
@@ -23,6 +24,7 @@ class FilterViewController: UIViewController, BEMCheckBoxDelegate {
     // Reference other classes
     var gameData : GameData = GameData()
     var games : [Game] = []
+    var database : Database = Database()
     
     // Set the selected variables to their default
     var playersSelected = 1

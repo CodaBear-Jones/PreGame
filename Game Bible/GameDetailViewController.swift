@@ -10,19 +10,39 @@ import UIKit
 
 class GameDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var game:Game!
+    // Reference other classes
+    var filterTableView : FilterTableViewController = FilterTableViewController()
+    
+    var game : Game!
+    var gameName : [String] = []
+    var previousIndexPathRow = 0
+    var filteredGames : [Game] = []
+    var previousViewController = ""
+    
+    // Reference the database class
+    var database : Database = Database()
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var gameNameLabel: UILabel!
     @IBOutlet weak var gameImageView: UIImageView!
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         
+        database.printDB()
+        
         // Update the game details
-        //gameNameLabel.text = game.name
-        title = game.name
+        
+        if previousViewController == "GameTableViewController" {
+            title = database.gameNames[previousIndexPathRow]
+        } else if previousViewController == "FilterTableViewController" {
+            title = filteredGames[previousIndexPathRow].name
+        } else {
+            // FavoriteTableViewController
+        }
+        
         gameImageView.image = UIImage(named: game.image)
         
         // Change the colours of the view
@@ -46,13 +66,19 @@ class GameDetailViewController: UIViewController, UITableViewDataSource, UITable
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! GameDetailTableViewCell
-    
+        
      // Configure the cell...
     switch indexPath.row {
         
     case 0:
         cell.fieldLabel.text = "Name"
-        cell.valueLabel.text = game.name
+        if previousViewController == "GameTableViewController" {
+            cell.valueLabel.text = database.gameNames[previousIndexPathRow]
+        } else if previousViewController == "FilterTableViewController" {
+            cell.valueLabel.text = filteredGames[previousIndexPathRow].name
+        } else {
+            // FavoriteTableViewController
+        }
         
     case 1:
         cell.fieldLabel.text = "Players"

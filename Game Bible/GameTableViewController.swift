@@ -11,6 +11,7 @@ import UIKit
 class GameTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
+    
     @IBAction func searchButton(_ sender: UIBarButtonItem) {
         let searchBar = UISearchBar()
         self.navigationItem.titleView = searchBar
@@ -50,6 +51,9 @@ class GameTableViewController: UIViewController, UITableViewDataSource, UITableV
             if let indexPath = tableView.indexPathForSelectedRow {
                 let destinationController = segue.destination as! GameDetailViewController
                 destinationController.game = games[indexPath.row]
+                destinationController.gameName = [database.gameNames[indexPath.row]]
+                destinationController.previousIndexPathRow = indexPath.row
+                destinationController.previousViewController = "GameTableViewController"
             }
         }
     }

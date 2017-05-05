@@ -49,6 +49,9 @@ class FilterTableViewController: UIViewController, UITableViewDataSource, UITabl
             if let indexPath = tableView.indexPathForSelectedRow {
                 let destinationController = segue.destination as! GameDetailViewController
                 destinationController.game = games[indexPath.row]
+                destinationController.previousIndexPathRow = indexPath.row
+                destinationController.filteredGames = self.filteredGames
+                destinationController.previousViewController = "FilterTableViewController"
             }
         }
     }

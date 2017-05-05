@@ -28,6 +28,8 @@
 		F613EBC21EB6924900B40962 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F613EBB51EB6923800B40962 /* SQLite.framework */; };
 		F62A28A81E75C14A00DF0805 /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A28A71E75C14A00DF0805 /* CategoryTableViewController.swift */; };
 		F658B0361EB95FFD00DD72E7 /* DrinkingGameDatabase.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = F658B0351EB95FFD00DD72E7 /* DrinkingGameDatabase.sqlite3 */; };
+		F658B0371EB9714700DD72E7 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F613EBB51EB6923800B40962 /* SQLite.framework */; };
+		F658B0381EB9714700DD72E7 /* SQLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F613EBB51EB6923800B40962 /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F66A119B1E8D344300616BA8 /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66A119A1E8D344300616BA8 /* GameData.swift */; };
 		F67518C41EB68EFC00EC9115 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67518C31EB68EFC00EC9115 /* Database.swift */; };
 		F6AE9E221E622AFD00663261 /* GameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AE9E211E622AFD00663261 /* GameTableViewCell.swift */; };
@@ -83,7 +85,28 @@
 			remoteGlobalIDString = A121AC451CA35C79005A31D1;
 			remoteInfo = "SQLite watchOS";
 		};
+		F658B0391EB9714700DD72E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F613EBAA1EB6923800B40962 /* SQLite.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = EE247AD21C3F04ED00AE3E12;
+			remoteInfo = "SQLite iOS";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F658B03B1EB9714700DD72E7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F658B0381EB9714700DD72E7 /* SQLite.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		F60CFF1C1E68DD930045D6D7 /* FilterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterTableViewCell.swift; sourceTree = "<group>"; };
@@ -124,6 +147,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F658B0371EB9714700DD72E7 /* SQLite.framework in Frameworks */,
 				F613EBC21EB6924900B40962 /* SQLite.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -232,10 +256,12 @@
 				F60F4DBA1E51F760000594FD /* Sources */,
 				F60F4DBB1E51F760000594FD /* Frameworks */,
 				F60F4DBC1E51F760000594FD /* Resources */,
+				F658B03B1EB9714700DD72E7 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				F658B03A1EB9714700DD72E7 /* PBXTargetDependency */,
 			);
 			name = PreGame;
 			productName = "Game Bible";
@@ -378,6 +404,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		F658B03A1EB9714700DD72E7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "SQLite iOS";
+			targetProxy = F658B0391EB9714700DD72E7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		F60F4DC51E51F761000594FD /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -494,6 +528,7 @@
 		F60F4DD11E51F761000594FD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = KS454CU8RT;
 				INFOPLIST_FILE = "Game Bible/Info.plist";
@@ -509,6 +544,7 @@
 		F60F4DD21E51F761000594FD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = KS454CU8RT;
 				INFOPLIST_FILE = "Game Bible/Info.plist";
