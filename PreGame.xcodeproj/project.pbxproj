@@ -23,8 +23,6 @@
 		F60F4DC91E51F761000594FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F60F4DC81E51F761000594FD /* Assets.xcassets */; };
 		F60F4DCC1E51F761000594FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F60F4DCA1E51F761000594FD /* LaunchScreen.storyboard */; };
 		F60F4DD71E522AE4000594FD /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = F60F4DD61E522AE4000594FD /* README.md */; };
-		F60F4DD91E522B02000594FD /* Home & Browse.png in Resources */ = {isa = PBXBuildFile; fileRef = F60F4DD81E522B02000594FD /* Home & Browse.png */; };
-		F60F4DDB1E522B0C000594FD /* Game.png in Resources */ = {isa = PBXBuildFile; fileRef = F60F4DDA1E522B0C000594FD /* Game.png */; };
 		F613EBC21EB6924900B40962 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F613EBB51EB6923800B40962 /* SQLite.framework */; };
 		F62A28A81E75C14A00DF0805 /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A28A71E75C14A00DF0805 /* CategoryTableViewController.swift */; };
 		F658B0361EB95FFD00DD72E7 /* DrinkingGameDatabase.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = F658B0351EB95FFD00DD72E7 /* DrinkingGameDatabase.sqlite3 */; };
@@ -132,8 +130,6 @@
 		F60F4DCB1E51F761000594FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F60F4DCD1E51F761000594FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F60F4DD61E522AE4000594FD /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		F60F4DD81E522B02000594FD /* Home & Browse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Home & Browse.png"; sourceTree = "<group>"; };
-		F60F4DDA1E522B0C000594FD /* Game.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Game.png; sourceTree = "<group>"; };
 		F613EBAA1EB6923800B40962 /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = "../../../../Downloads/SQLite.swift-master 2/SQLite.xcodeproj"; sourceTree = "<group>"; };
 		F62A28A71E75C14A00DF0805 /* CategoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryTableViewController.swift; path = ../CategoryTableViewController.swift; sourceTree = "<group>"; };
 		F658B0351EB95FFD00DD72E7 /* DrinkingGameDatabase.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = DrinkingGameDatabase.sqlite3; sourceTree = "<group>"; };
@@ -226,8 +222,6 @@
 			isa = PBXGroup;
 			children = (
 				F60F4DD61E522AE4000594FD /* README.md */,
-				F60F4DD81E522B02000594FD /* Home & Browse.png */,
-				F60F4DDA1E522B0C000594FD /* Game.png */,
 			);
 			name = Documentation;
 			sourceTree = "<group>";
@@ -367,9 +361,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F60F4DCC1E51F761000594FD /* LaunchScreen.storyboard in Resources */,
-				F60F4DD91E522B02000594FD /* Home & Browse.png in Resources */,
 				F658B0361EB95FFD00DD72E7 /* DrinkingGameDatabase.sqlite3 in Resources */,
-				F60F4DDB1E522B0C000594FD /* Game.png in Resources */,
 				F60F4DC91E51F761000594FD /* Assets.xcassets in Resources */,
 				F60F4DC71E51F761000594FD /* Main.storyboard in Resources */,
 			);

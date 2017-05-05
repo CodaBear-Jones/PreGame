@@ -41,6 +41,10 @@ class GameTableViewController: UIViewController, UITableViewDataSource, UITableV
         }
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -50,7 +54,7 @@ class GameTableViewController: UIViewController, UITableViewDataSource, UITableV
         if segue.identifier == "showGameDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let destinationController = segue.destination as! GameDetailViewController
-                destinationController.game = games[indexPath.row]
+                //destinationController.game = games[indexPath.row] FIX
                 destinationController.gameName = [database.gameNames[indexPath.row]]
                 destinationController.previousIndexPathRow = indexPath.row
                 destinationController.previousViewController = "GameTableViewController"

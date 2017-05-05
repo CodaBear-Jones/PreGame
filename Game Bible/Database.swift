@@ -41,8 +41,6 @@ class Database {
     
             }
             
-             print(gameNames, "\n")
-            
         } catch {
             print("DB Error")
         }

@@ -14,12 +14,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     // Everything that needs to be run when the application opens
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         // Change the colour of the navigation bar
         UINavigationBar.appearance().tintColor = UIColor.white
         UINavigationBar.appearance().barTintColor = UIColor(red: 210.0/255.0, green: 50.0/255.0, blue: 50.0/255.0, alpha: 1.0)
         
+        UIBarButtonItem.appearance().tintColor = UIColor.white
         // Change the font on the navigation bar
         if let barFont = UIFont(name: "Avenir-Light", size: 24.0) {
             UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white, NSFontAttributeName:barFont]

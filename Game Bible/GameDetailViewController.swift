@@ -43,7 +43,7 @@ class GameDetailViewController: UIViewController, UITableViewDataSource, UITable
             // FavoriteTableViewController
         }
         
-        gameImageView.image = UIImage(named: game.image)
+        //gameImageView.image = UIImage(named: game.image) FIX
         
         // Change the colours of the view
         tableView.backgroundColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 0.2)
@@ -82,19 +82,43 @@ class GameDetailViewController: UIViewController, UITableViewDataSource, UITable
         
     case 1:
         cell.fieldLabel.text = "Players"
-        cell.valueLabel.text = game.players
+        if previousViewController == "GameTableViewController" {
+            cell.valueLabel.text = database.gameNames[previousIndexPathRow]
+        } else if previousViewController == "FilterTableViewController" {
+            cell.valueLabel.text = filteredGames[previousIndexPathRow].name
+        } else {
+            // FavoriteTableViewController
+        }
         
     case 2:
         cell.fieldLabel.text = "Description"
-        cell.valueLabel.text = game.description
+        if previousViewController == "GameTableViewController" {
+            cell.valueLabel.text = database.gameNames[previousIndexPathRow]
+        } else if previousViewController == "FilterTableViewController" {
+            cell.valueLabel.text = filteredGames[previousIndexPathRow].name
+        } else {
+            // FavoriteTableViewController
+        }
         
     case 3:
         cell.fieldLabel.text = "Instructions"
-        cell.valueLabel.text = game.instructions
+        if previousViewController == "GameTableViewController" {
+            cell.valueLabel.text = database.gameNames[previousIndexPathRow]
+        } else if previousViewController == "FilterTableViewController" {
+            cell.valueLabel.text = filteredGames[previousIndexPathRow].name
+        } else {
+            // FavoriteTableViewController
+        }
         
     default:
         cell.fieldLabel.text = "Default Field"
-        cell.valueLabel.text = "Default Value"
+        if previousViewController == "GameTableViewController" {
+            cell.valueLabel.text = database.gameNames[previousIndexPathRow]
+        } else if previousViewController == "FilterTableViewController" {
+            cell.valueLabel.text = filteredGames[previousIndexPathRow].name
+        } else {
+            // FavoriteTableViewController
+        }
         
     }
         cell.backgroundColor = UIColor.clear
