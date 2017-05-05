@@ -217,7 +217,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Cih-DI-4QG">
-                                <rect key="frame" x="17" y="104" width="340" height="432"/>
+                                <rect key="frame" x="17" y="117.5" width="340" height="432"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fFL-t0-Gx7">
                                         <rect key="frame" x="74.5" y="0.0" width="191" height="58.5"/>
@@ -354,7 +354,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Cih-DI-4QG" firstAttribute="top" secondItem="KVf-qH-Lxx" secondAttribute="bottom" constant="40" id="4XF-ai-mO0"/>
+                            <constraint firstItem="Cih-DI-4QG" firstAttribute="centerY" secondItem="olj-Ss-5bX" secondAttribute="centerY" id="AEA-AZ-ykz"/>
                             <constraint firstItem="Cih-DI-4QG" firstAttribute="centerX" secondItem="olj-Ss-5bX" secondAttribute="centerX" id="hv1-Jt-VUB"/>
                         </constraints>
                     </view>
@@ -739,8 +739,8 @@
         <image name="CoinsMaterial" width="40" height="36"/>
         <image name="CupMaterial" width="40" height="34"/>
         <image name="DiceMaterial" width="40" height="35"/>
-        <image name="PokerChipsMaterial" width="40" height="35"/>
-        <image name="ShotGlassMaterial" width="40" height="35"/>
+        <image name="PokerChipsMaterial" width="40" height="34"/>
+        <image name="ShotGlassMaterial" width="40" height="34"/>
         <image name="filter" width="28" height="28"/>
         <image name="filterSelected" width="28" height="28"/>
         <image name="games" width="28" height="28"/>
