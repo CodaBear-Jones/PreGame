@@ -19,9 +19,9 @@ class FilterTableViewController: UIViewController, UITableViewDataSource, UITabl
     var filteredGames : [Game] = []
     
     var playersSelected : Int = 0
-    var hasDeckOfCards = false
-    var hasPairOfDice = false
-    var hasDominos = false
+    var hasCards = false
+    var hasDice = false
+    var hasCup = false
     var difficultySelected : Int = 0
     var actionSelected : Int = 0
     

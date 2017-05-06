@@ -15,11 +15,91 @@ import SQLite
 class FilterViewController: UIViewController, BEMCheckBoxDelegate {
     
     @IBOutlet weak var playersSegment: UISegmentedControl!
-    @IBOutlet weak var deckOfCardsCheckbox: BEMCheckBox!
-    @IBOutlet weak var pairOfDiceCheckbox: BEMCheckBox!
-    @IBOutlet weak var dominosCheckbox: BEMCheckBox!
     @IBOutlet weak var difficultySegment: UISegmentedControl!
     @IBOutlet weak var actionSegment: UISegmentedControl!
+    
+    @IBAction func SoloCupButton(_ sender: UIButton) {
+    
+        if hasCup {
+            sender.setImage(UIImage(named:"CupMaterial.png"), for: .normal)
+            hasCup = false
+        } else {
+            sender.setImage(UIImage(named:"CupMaterialFilled.png"), for: .normal)
+            hasCup = true
+        }
+        
+    }
+    @IBAction func BallButton(_ sender: UIButton) {
+        
+        if hasBall {
+            sender.setImage(UIImage(named:"BallMaterial.png"), for: .normal)
+            hasBall = false
+        } else {
+            sender.setImage(UIImage(named:"BallMaterialFilled.png"), for: .normal)
+            hasBall = true
+        }
+        
+    }
+    @IBAction func CardsButton(_ sender: UIButton) {
+        
+        if hasCards {
+            sender.setImage(UIImage(named:"CardsMaterial.png"), for: .normal)
+            hasCards = false
+        } else {
+            sender.setImage(UIImage(named:"CardsMaterialFilled.png"), for: .normal)
+            hasCards = true
+        }
+
+        
+    }
+    @IBAction func DiceButton(_ sender: UIButton) {
+        
+        if hasDice {
+            sender.setImage(UIImage(named:"DiceMaterial.png"), for: .normal)
+            hasDice = false
+        } else {
+            sender.setImage(UIImage(named:"DiceMaterialFilled.png"), for: .normal)
+            hasDice = true
+        }
+
+        
+    }
+    @IBAction func CoinsButton(_ sender: UIButton) {
+        
+        if hasCoins {
+            sender.setImage(UIImage(named:"CoinsMaterial.png"), for: .normal)
+            hasCoins = false
+        } else {
+            sender.setImage(UIImage(named:"CoinsMaterialFilled.png"), for: .normal)
+            hasCoins = true
+        }
+
+        
+    }
+    @IBAction func ShotGlassButton(_ sender: UIButton) {
+        
+        if hasShotGlass {
+            sender.setImage(UIImage(named:"ShotGlassMaterial.png"), for: .normal)
+            hasShotGlass = false
+        } else {
+            sender.setImage(UIImage(named:"ShotGlassMaterialFilled.png"), for: .normal)
+            hasShotGlass = true
+        }
+
+        
+    }
+    @IBAction func PokerChipsButton(_ sender: UIButton) {
+        
+        if hasPokerChips {
+            sender.setImage(UIImage(named:"PokerChipsMaterial.png"), for: .normal)
+            hasPokerChips = false
+        } else {
+            sender.setImage(UIImage(named:"PokerChipsMaterialFilled.png"), for: .normal)
+            hasPokerChips = true
+        }
+
+        
+    }
     
     // Reference other classes
     var gameData : GameData = GameData()
@@ -28,11 +108,17 @@ class FilterViewController: UIViewController, BEMCheckBoxDelegate {
     
     // Set the selected variables to their default
     var playersSelected = 1
-    var hasDeckOfCards = false
-    var hasPairOfDice = false
-    var hasDominos = false
+    
     var difficultySelected = 1
     var actionSelected = 1
+    
+    var hasCards = false
+    var hasDice = false
+    var hasCup = false
+    var hasBall = false
+    var hasCoins = false
+    var hasShotGlass = false
+    var hasPokerChips = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,9 +128,9 @@ class FilterViewController: UIViewController, BEMCheckBoxDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        deckOfCardsCheckbox.delegate = self
-        pairOfDiceCheckbox.delegate = self
-        dominosCheckbox.delegate = self
+        
+        // FIX - CHECK BOXES HISTORY
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -55,12 +141,6 @@ class FilterViewController: UIViewController, BEMCheckBoxDelegate {
         return false
     }
     
-    func didTap(_ checkBox: BEMCheckBox) {
-        // Update the variables when a box is tapped
-        hasDeckOfCards = deckOfCardsCheckbox.on
-        hasPairOfDice = pairOfDiceCheckbox.on
-        hasDominos = dominosCheckbox.on
-    }
     
     // Update the variables when a segement is updated
     @IBAction func playersChanged(_ sender: Any) {
@@ -120,9 +200,9 @@ class FilterViewController: UIViewController, BEMCheckBoxDelegate {
             destinationController.playersSelected = self.playersSelected
             destinationController.difficultySelected = self.difficultySelected
             destinationController.actionSelected = self.actionSelected
-            destinationController.hasDominos = self.hasDominos
-            destinationController.hasPairOfDice = self.hasPairOfDice
-            destinationController.hasDeckOfCards = self.hasDeckOfCards
+            destinationController.hasCup = self.hasCup
+            destinationController.hasDice = self.hasDice
+            destinationController.hasCards = self.hasCards
             
             // Create an empty array
             var filteredGames = [Game]()
@@ -133,33 +213,33 @@ class FilterViewController: UIViewController, BEMCheckBoxDelegate {
             var dominoGames = games.filter({$0.dominos == true})
             
             // Different selection scenario, four for each maerial
-            if hasDeckOfCards == true && difficultySelected != 4 && actionSelected != 4 {
+            if hasCards == true && difficultySelected != 4 && actionSelected != 4 {
                 filteredGames += cardGames.filter({($0.playersRequired <= playersSelected) && ($0.difficulty == difficultySelected) && ($0.action == actionSelected)})
-            } else if hasDeckOfCards == true && difficultySelected == 4 && actionSelected == 4 {
+            } else if hasCards == true && difficultySelected == 4 && actionSelected == 4 {
                 filteredGames += cardGames.filter({($0.playersRequired <= playersSelected) && ($0.action <= 3) && ($0.difficulty <= 3)})
-            } else if hasDeckOfCards == true && difficultySelected != 4 && actionSelected == 4 {
+            } else if hasCards == true && difficultySelected != 4 && actionSelected == 4 {
                 filteredGames += cardGames.filter({($0.playersRequired <= playersSelected) && ($0.action <= 3) && ($0.difficulty == difficultySelected)})
-            } else if hasDeckOfCards == true && difficultySelected == 4 && actionSelected != 4 {
+            } else if hasCards == true && difficultySelected == 4 && actionSelected != 4 {
                 filteredGames += cardGames.filter({($0.playersRequired <= playersSelected) && ($0.action == actionSelected) && ($0.difficulty <= 3)})
             }
             
-            if hasPairOfDice == true && difficultySelected != 4 && actionSelected != 4 {
+            if hasDice == true && difficultySelected != 4 && actionSelected != 4 {
                 filteredGames += diceGames.filter({($0.playersRequired <= playersSelected) && ($0.difficulty == difficultySelected) && ($0.action == actionSelected)})
-            } else if hasPairOfDice == true && difficultySelected == 4 && actionSelected == 4 {
+            } else if hasDice == true && difficultySelected == 4 && actionSelected == 4 {
                 filteredGames += diceGames.filter({($0.playersRequired <= playersSelected) && ($0.action <= 3) && ($0.difficulty <= 3)})
-            } else if hasPairOfDice == true && difficultySelected != 4 && actionSelected == 4 {
+            } else if hasDice == true && difficultySelected != 4 && actionSelected == 4 {
                 filteredGames += diceGames.filter({($0.playersRequired <= playersSelected) && ($0.action <= 3) && ($0.difficulty == difficultySelected)})
-            } else if hasPairOfDice == true && difficultySelected == 4 && actionSelected != 4 {
+            } else if hasDice == true && difficultySelected == 4 && actionSelected != 4 {
                 filteredGames += diceGames.filter({($0.playersRequired <= playersSelected) && ($0.action == actionSelected) && ($0.difficulty <= 3)})
             }
             
-            if hasDominos == true && difficultySelected != 4 && actionSelected != 4 {
+            if hasCup == true && difficultySelected != 4 && actionSelected != 4 {
                 filteredGames += dominoGames.filter({($0.playersRequired <= playersSelected) && ($0.difficulty == difficultySelected) && ($0.action == actionSelected)})
-            } else if hasDominos == true && difficultySelected == 4 && actionSelected == 4 {
+            } else if hasCup == true && difficultySelected == 4 && actionSelected == 4 {
                 filteredGames += dominoGames.filter({($0.playersRequired <= playersSelected) && ($0.action <= 3) && ($0.difficulty <= 3)})
-            } else if hasDominos == true && difficultySelected != 4 && actionSelected == 4 {
+            } else if hasCup == true && difficultySelected != 4 && actionSelected == 4 {
                 filteredGames += dominoGames.filter({($0.playersRequired <= playersSelected) && ($0.action <= 3) && ($0.difficulty == difficultySelected)})
-            } else if hasDominos == true && difficultySelected == 4 && actionSelected != 4 {
+            } else if hasCup == true && difficultySelected == 4 && actionSelected != 4 {
                 filteredGames += dominoGames.filter({($0.playersRequired <= playersSelected) && ($0.action == actionSelected) && ($0.difficulty <= 3)})
             }
             
