@@ -16,7 +16,7 @@ class Database {
     
     let id = Expression<Int>("ID")
     let name = Expression<String?>("name")
-    
+    let description = Expression<String>("description")
     
     func printDB() {
         
@@ -24,19 +24,13 @@ class Database {
             let db = try Connection((Bundle.main.path(forResource: "DrinkingGameDatabase", ofType: "sqlite3"))!)
             
             for game in try db.prepare(games) {
-                //print("id: \(game[id]), name: \(game[name])")
-                
                 let optionalGameNames : [String?] = [game[name]]
-                
                 for gameNames in optionalGameNames {
-                    
                     guard let gameNames = gameNames else {
                         print("Was not able to unwrap game names")
                         continue
                     }
-                    
                     self.gameNames += [gameNames]
-            
                 }
     
             }

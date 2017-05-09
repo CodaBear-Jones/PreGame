@@ -125,6 +125,7 @@ class FilterViewController: UIViewController, BEMCheckBoxDelegate {
         
         /// Make a new reference to the games data
         games = gameData.games
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
