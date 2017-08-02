@@ -13,9 +13,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
+    var database : Database = Database()
+    
     // Everything that needs to be run when the application opens
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        //database.printDB()
         
         // Change the colour of the navigation bar
         UINavigationBar.appearance().tintColor = UIColor.white

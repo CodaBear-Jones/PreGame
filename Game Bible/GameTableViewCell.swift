@@ -14,9 +14,15 @@ class GameTableViewCell: UITableViewCell {
     
     @IBOutlet weak var playersLabel: UILabel!
     
-    @IBOutlet weak var materialsLabel: UILabel!
+    //@IBOutlet weak var materialsLabel: UILabel!
     
     @IBOutlet weak var thumbnailImageView: UIImageView!
+    
+    @IBOutlet weak var materialImage1: UIImageView!
+    
+    @IBOutlet weak var materialImage2: UIImageView!
+    
+    @IBOutlet weak var materialImage3: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

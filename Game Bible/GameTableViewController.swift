@@ -56,6 +56,7 @@ class GameTableViewController: UIViewController, UITableViewDataSource, UITableV
                 let destinationController = segue.destination as! GameDetailViewController
                 //destinationController.game = games[indexPath.row] FIX
                 destinationController.gameName = [database.gameNames[indexPath.row]]
+                destinationController.gameDescription = [database.gameDescriptions[indexPath.row]]
                 destinationController.previousIndexPathRow = indexPath.row
                 destinationController.previousViewController = "GameTableViewController"
             }
@@ -85,13 +86,81 @@ class GameTableViewController: UIViewController, UITableViewDataSource, UITableV
         let cellIdentifier = "Cell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! GameTableViewCell
         
+        var letters : String = database.gameMaterials[indexPath.row]
+        
+        if letters.hasPrefix("1"){
+            cell.materialImage1.image = UIImage(named: "CupMaterialFilled")
+        } else if letters.hasPrefix("2") {
+            cell.materialImage1.image = UIImage(named: "BallMaterialFilled")
+        } else if letters.hasPrefix("3") {
+            cell.materialImage1.image = UIImage(named: "CardsMaterialFilled")
+        } else if letters.hasPrefix("4") {
+            cell.materialImage1.image = UIImage(named: "DicelMaterialFilled")
+        } else if letters.hasPrefix("5") {
+            cell.materialImage1.image = UIImage(named: "CoinsMaterialFilled")
+        } else if letters.hasPrefix("6") {
+            cell.materialImage1.image = UIImage(named: "ShotGlassMaterialFilled")
+        } else if letters.hasPrefix("7") {
+            cell.materialImage1.image = UIImage(named: "PokerChipsMaterialFilled")
+        }
+        
+        if letters.characters.count > 1 {
+        let index = letters.characters.index(letters.startIndex, offsetBy: 1)
+        let startChar = letters[index]
+            if startChar == "1" {
+                cell.materialImage2.image = UIImage(named: "CupMaterialFilled")
+            } else if startChar == "2" {
+                cell.materialImage2.image = UIImage(named: "BallMaterialFilled")
+            } else if startChar == "3" {
+                cell.materialImage2.image = UIImage(named: "CardsMaterialFilled")
+            } else if startChar == "4" {
+                cell.materialImage2.image = UIImage(named: "DicelMaterialFilled")
+            } else if startChar == "5" {
+                cell.materialImage2.image = UIImage(named: "CoinsMaterialFilled")
+            } else if startChar == "6" {
+                cell.materialImage2.image = UIImage(named: "ShotGlassMaterialFilled")
+            } else if startChar == "7" {
+                cell.materialImage2.image = UIImage(named: "PokerChipsMaterialFilled")
+            }
+        }
+        
+        if letters.characters.count > 2 {
+            let index = letters.characters.index(letters.startIndex, offsetBy: 2)
+            let startChar = letters[index]
+            if startChar == "1" {
+                cell.materialImage3.image = UIImage(named: "CupMaterialFilled")
+            } else if startChar == "2" {
+                cell.materialImage3.image = UIImage(named: "BallMaterialFilled")
+            } else if startChar == "3" {
+                cell.materialImage3.image = UIImage(named: "CardsMaterialFilled")
+            } else if startChar == "4" {
+                cell.materialImage3.image = UIImage(named: "DicelMaterialFilled")
+            } else if startChar == "5" {
+                cell.materialImage3.image = UIImage(named: "CoinsMaterialFilled")
+            } else if startChar == "6" {
+                cell.materialImage3.image = UIImage(named: "ShotGlassMaterialFilled")
+            } else if startChar == "7" {
+                cell.materialImage3.image = UIImage(named: "PokerChipsMaterialFilled")
+            }
+        }
+        
+        
+
+        
+        
+        
+        
+
+        
+        
+        
         // Update the cell content for each row that was returned
         cell.nameLabel.text = database.gameNames[indexPath.row]
         //cell.thumbnailImageView.image = UIImage(named: games[indexPath.row].image)
-        //cell.playersLabel.text = games[indexPath.row].players
+        cell.playersLabel.text = database.gamePlayers[indexPath.row]
         //descriptionLabel.text = games[indexPath.row].description
         //instructionsLabel.text = games[indexPath.row].instructions
-        //cell.materialsLabel.text = games[indexPath.row].materials
+        //cell.materialsLabel.text = database.gameMaterials[indexPath.row]
         
         return cell
         

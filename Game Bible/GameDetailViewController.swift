@@ -15,6 +15,7 @@ class GameDetailViewController: UIViewController, UITableViewDataSource, UITable
     
     var game : Game!
     var gameName : [String] = []
+    var gameDescription : [String] = []
     var previousIndexPathRow = 0
     var filteredGames : [Game] = []
     var previousViewController = ""
@@ -31,7 +32,7 @@ class GameDetailViewController: UIViewController, UITableViewDataSource, UITable
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         
-        database.printDB()
+        database.printDB() // THIS IS PRINTING THE DATABASE EVERY TIME THE SCREEN IS SHOWN...?????????
         
         // Update the game details
         
@@ -49,6 +50,10 @@ class GameDetailViewController: UIViewController, UITableViewDataSource, UITable
         tableView.backgroundColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 0.2)
         tableView.tableFooterView = UIView(frame: CGRect.zero)
         tableView.separatorColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 0.8)
+        
+        
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 140
     }
 
     override func didReceiveMemoryWarning() {
@@ -93,7 +98,8 @@ class GameDetailViewController: UIViewController, UITableViewDataSource, UITable
     case 2:
         cell.fieldLabel.text = "Description"
         if previousViewController == "GameTableViewController" {
-            cell.valueLabel.text = database.gameNames[previousIndexPathRow]
+            cell.valueLabel.sizeToFit()
+            cell.valueLabel.text = database.gameDescriptions[previousIndexPathRow]
         } else if previousViewController == "FilterTableViewController" {
             cell.valueLabel.text = filteredGames[previousIndexPathRow].name
         } else {

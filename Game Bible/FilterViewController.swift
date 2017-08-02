@@ -205,8 +205,16 @@ class FilterViewController: UIViewController, BEMCheckBoxDelegate {
             destinationController.hasDice = self.hasDice
             destinationController.hasCards = self.hasCards
             
-            // Create an empty array
-            var filteredGames = [Game]()
+            
+            
+            var filteredGames : [String] = []
+            
+            
+            
+            
+            
+            
+            
             
             // Categorize by materials
             var cardGames = games.filter({$0.deckOfCards == true})
@@ -214,6 +222,9 @@ class FilterViewController: UIViewController, BEMCheckBoxDelegate {
             var dominoGames = games.filter({$0.dominos == true})
             
             // Different selection scenario, four for each maerial
+            
+            /*
+            
             if hasCards == true && difficultySelected != 4 && actionSelected != 4 {
                 filteredGames += cardGames.filter({($0.playersRequired <= playersSelected) && ($0.difficulty == difficultySelected) && ($0.action == actionSelected)})
             } else if hasCards == true && difficultySelected == 4 && actionSelected == 4 {
@@ -243,6 +254,8 @@ class FilterViewController: UIViewController, BEMCheckBoxDelegate {
             } else if hasCup == true && difficultySelected == 4 && actionSelected != 4 {
                 filteredGames += dominoGames.filter({($0.playersRequired <= playersSelected) && ($0.action == actionSelected) && ($0.difficulty <= 3)})
             }
+ 
+ */
             
             destinationController.filteredGames = filteredGames
             

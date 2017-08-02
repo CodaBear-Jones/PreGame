@@ -16,7 +16,7 @@ class FilterTableViewController: UIViewController, UITableViewDataSource, UITabl
     var gameData : GameData = GameData()
     
     var games : [Game] = []
-    var filteredGames : [Game] = []
+    var filteredGames : [String] = []
     
     var playersSelected : Int = 0
     var hasCards = false
@@ -50,14 +50,14 @@ class FilterTableViewController: UIViewController, UITableViewDataSource, UITabl
                 let destinationController = segue.destination as! GameDetailViewController
                 destinationController.game = games[indexPath.row]
                 destinationController.previousIndexPathRow = indexPath.row
-                destinationController.filteredGames = self.filteredGames
+                //destinationController.filteredGames = self.filteredGames
                 destinationController.previousViewController = "FilterTableViewController"
             }
         }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return filteredGames.count
+        return 5//filteredGames.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -65,10 +65,10 @@ class FilterTableViewController: UIViewController, UITableViewDataSource, UITabl
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! GameTableViewCell
         
         // Update the cell content for each row that was returned from filter
-        cell.nameLabel.text = filteredGames[indexPath.row].name
-        cell.thumbnailImageView.image = UIImage(named: filteredGames[indexPath.row].image)
-        cell.playersLabel.text = filteredGames[indexPath.row].players
-        cell.materialsLabel.text = filteredGames[indexPath.row].materials
+        //cell.nameLabel.text = filteredGames[indexPath.row].name
+        //cell.thumbnailImageView.image = UIImage(named: filteredGames[indexPath.row].image)
+        //cell.playersLabel.text = filteredGames[indexPath.row].players
+        //cell.materialsLabel.text = filteredGames[indexPath.row].materials
         
         return cell
     }
