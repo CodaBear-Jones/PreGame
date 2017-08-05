@@ -31,7 +31,7 @@ class GameTableViewController: UIViewController, UITableViewDataSource, UITableV
         
         // Make a new reference to the games data
         games = gameData.games
-
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -88,71 +88,54 @@ class GameTableViewController: UIViewController, UITableViewDataSource, UITableV
         
         var letters : String = database.gameMaterials[indexPath.row]
         
-        if letters.hasPrefix("1"){
-            cell.materialImage1.image = UIImage(named: "CupMaterialFilled")
-        } else if letters.hasPrefix("2") {
-            cell.materialImage1.image = UIImage(named: "BallMaterialFilled")
-        } else if letters.hasPrefix("3") {
-            cell.materialImage1.image = UIImage(named: "CardsMaterialFilled")
-        } else if letters.hasPrefix("4") {
-            cell.materialImage1.image = UIImage(named: "DicelMaterialFilled")
-        } else if letters.hasPrefix("5") {
-            cell.materialImage1.image = UIImage(named: "CoinsMaterialFilled")
-        } else if letters.hasPrefix("6") {
-            cell.materialImage1.image = UIImage(named: "ShotGlassMaterialFilled")
-        } else if letters.hasPrefix("7") {
-            cell.materialImage1.image = UIImage(named: "PokerChipsMaterialFilled")
-        }
+        //print("Materials:", letters)
         
-        if letters.characters.count > 1 {
-        let index = letters.characters.index(letters.startIndex, offsetBy: 1)
-        let startChar = letters[index]
-            if startChar == "1" {
-                cell.materialImage2.image = UIImage(named: "CupMaterialFilled")
-            } else if startChar == "2" {
-                cell.materialImage2.image = UIImage(named: "BallMaterialFilled")
-            } else if startChar == "3" {
-                cell.materialImage2.image = UIImage(named: "CardsMaterialFilled")
-            } else if startChar == "4" {
-                cell.materialImage2.image = UIImage(named: "DicelMaterialFilled")
-            } else if startChar == "5" {
-                cell.materialImage2.image = UIImage(named: "CoinsMaterialFilled")
-            } else if startChar == "6" {
-                cell.materialImage2.image = UIImage(named: "ShotGlassMaterialFilled")
-            } else if startChar == "7" {
-                cell.materialImage2.image = UIImage(named: "PokerChipsMaterialFilled")
+        if letters.hasPrefix("0") {
+            cell.materialImage1.image = UIImage(named: "")
+            cell.materialImage2.image = UIImage(named: "")
+        } else {
+            
+            if letters.hasPrefix("1"){
+                cell.materialImage1.image = UIImage(named: "CupMaterial")
+            } else if letters.hasPrefix("2") {
+                cell.materialImage1.image = UIImage(named: "BallMaterial")
+            } else if letters.hasPrefix("3") {
+                cell.materialImage1.image = UIImage(named: "CardsMaterial")
+            } else if letters.hasPrefix("4") {
+                cell.materialImage1.image = UIImage(named: "DiceMaterial")
+            } else if letters.hasPrefix("5") {
+                cell.materialImage1.image = UIImage(named: "CoinsMaterial")
+            } else if letters.hasPrefix("6") {
+                cell.materialImage1.image = UIImage(named: "ShotGlassMaterial")
+            } else if letters.hasPrefix("7") {
+                cell.materialImage1.image = UIImage(named: "PokerChipsMaterial")
+            }
+            
+            if letters.characters.count > 1 {
+                
+                let index = letters.characters.index(letters.startIndex, offsetBy: 1)
+                let endChar = letters[index]
+                
+                if endChar == "1" {
+                    cell.materialImage2.image = UIImage(named: "CupMaterial")
+                } else if endChar == "2" {
+                    cell.materialImage2.image = UIImage(named: "BallMaterial")
+                } else if endChar == "3" {
+                    cell.materialImage2.image = UIImage(named: "CardsMaterial")
+                } else if endChar == "4" {
+                    cell.materialImage2.image = UIImage(named: "DiceMaterial")
+                } else if endChar == "5" {
+                    cell.materialImage2.image = UIImage(named: "CoinsMaterial")
+                } else if endChar == "6" {
+                    cell.materialImage2.image = UIImage(named: "ShotGlassMaterial")
+                } else if endChar == "7" {
+                    cell.materialImage2.image = UIImage(named: "PokerChipsMaterial")
+                }
+                
+            } else {
+                cell.materialImage2.image = UIImage(named: "")
             }
         }
-        
-        if letters.characters.count > 2 {
-            let index = letters.characters.index(letters.startIndex, offsetBy: 2)
-            let startChar = letters[index]
-            if startChar == "1" {
-                cell.materialImage3.image = UIImage(named: "CupMaterialFilled")
-            } else if startChar == "2" {
-                cell.materialImage3.image = UIImage(named: "BallMaterialFilled")
-            } else if startChar == "3" {
-                cell.materialImage3.image = UIImage(named: "CardsMaterialFilled")
-            } else if startChar == "4" {
-                cell.materialImage3.image = UIImage(named: "DicelMaterialFilled")
-            } else if startChar == "5" {
-                cell.materialImage3.image = UIImage(named: "CoinsMaterialFilled")
-            } else if startChar == "6" {
-                cell.materialImage3.image = UIImage(named: "ShotGlassMaterialFilled")
-            } else if startChar == "7" {
-                cell.materialImage3.image = UIImage(named: "PokerChipsMaterialFilled")
-            }
-        }
-        
-        
-
-        
-        
-        
-        
-
-        
-        
         
         // Update the cell content for each row that was returned
         cell.nameLabel.text = database.gameNames[indexPath.row]

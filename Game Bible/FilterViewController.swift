@@ -108,9 +108,8 @@ class FilterViewController: UIViewController, BEMCheckBoxDelegate {
     
     // Set the selected variables to their default
     var playersSelected = 1
-    
-    var difficultySelected = 1
-    var actionSelected = 1
+    var complexitySelected = 1
+    var drunknessSelected = 1
     
     var hasCards = false
     var hasDice = false
@@ -165,29 +164,29 @@ class FilterViewController: UIViewController, BEMCheckBoxDelegate {
     @IBAction func difficultyChanged(_ sender: Any) {
         switch difficultySegment.selectedSegmentIndex {
         case 0:
-            difficultySelected = 1
+            complexitySelected = 1
         case 1:
-            difficultySelected = 2
+            complexitySelected = 2
         case 2:
-            difficultySelected = 3
+            complexitySelected = 3
         case 3:
-            difficultySelected = 4
+            complexitySelected = 4
         default:
-            difficultySelected = 1
+            complexitySelected = 1
         }
     }
     @IBAction func actionChanged(_ sender: Any) {
         switch actionSegment.selectedSegmentIndex {
         case 0:
-            actionSelected = 1
+            drunknessSelected = 1
         case 1:
-            actionSelected = 2
+            drunknessSelected = 2
         case 2:
-            actionSelected = 3
+            drunknessSelected = 3
         case 3:
-            actionSelected = 4
+            drunknessSelected = 4
         default:
-            actionSelected = 1
+            drunknessSelected = 1
         }
     }
     
@@ -198,14 +197,16 @@ class FilterViewController: UIViewController, BEMCheckBoxDelegate {
             let destinationController = segue.destination as! FilterTableViewController
             
             // Send the data
-            destinationController.playersSelected = self.playersSelected
-            destinationController.difficultySelected = self.difficultySelected
-            destinationController.actionSelected = self.actionSelected
-            destinationController.hasCup = self.hasCup
-            destinationController.hasDice = self.hasDice
-            destinationController.hasCards = self.hasCards
-            
-            
+//            destinationController.playersSelected = self.playersSelected
+//            destinationController.difficultySelected = self.complexitySelected
+//            destinationController.actionSelected = self.drunknessSelected
+//            destinationController.hasCup = self.hasCup
+//            destinationController.hasBall = self.hasBall
+//            destinationController.hasCards = self.hasCards
+//            destinationController.hasDice = self.hasDice
+//            destinationController.hasCoins = self.hasCoins
+//            destinationController.hasShotGlass = self.hasShotGlass
+//            destinationController.hasPokerChips = self.hasPokerChips
             
             var filteredGames : [String] = []
             
@@ -216,10 +217,10 @@ class FilterViewController: UIViewController, BEMCheckBoxDelegate {
             
             
             
-            // Categorize by materials
-            var cardGames = games.filter({$0.deckOfCards == true})
-            var diceGames = games.filter({$0.pairOfDice == true})
-            var dominoGames = games.filter({$0.dominos == true})
+//            // Categorize by materials
+//            var cardGames = games.filter({$0.deckOfCards == true})
+//            var diceGames = games.filter({$0.pairOfDice == true})
+//            var dominoGames = games.filter({$0.dominos == true})
             
             // Different selection scenario, four for each maerial
             
@@ -257,10 +258,16 @@ class FilterViewController: UIViewController, BEMCheckBoxDelegate {
  
  */
             
+            
+            
+            
+            
+            
+            
             destinationController.filteredGames = filteredGames
             
+            // Show error message if no games are available
             if filteredGames.count == 0 {
-                
                 let alert = UIAlertController(title: "No Results", message: "There are no games that match your filter", preferredStyle: UIAlertControllerStyle.alert)
                 alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
                 self.present(alert, animated: true, completion: nil)

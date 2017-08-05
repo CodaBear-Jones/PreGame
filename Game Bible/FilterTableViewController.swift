@@ -18,13 +18,6 @@ class FilterTableViewController: UIViewController, UITableViewDataSource, UITabl
     var games : [Game] = []
     var filteredGames : [String] = []
     
-    var playersSelected : Int = 0
-    var hasCards = false
-    var hasDice = false
-    var hasCup = false
-    var difficultySelected : Int = 0
-    var actionSelected : Int = 0
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         

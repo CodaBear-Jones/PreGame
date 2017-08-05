@@ -27,6 +27,18 @@ class Database {
     let difficulty = Expression<Int>("difficulty")
     let action = Expression<Int>("action")
     
+    var playersSelected = 0
+    var complexitySelected = 0
+    var drunknessSelected = 0
+    
+    var hasCards = false
+    var hasDice = false
+    var hasCup = false
+    var hasBall = false
+    var hasCoins = false
+    var hasShotGlass = false
+    var hasPokerChips = false
+    
     func printDB() {
         
         do {
@@ -89,27 +101,23 @@ class Database {
             print("Database Error")
         }
         
+        var stringPlayersRequired = [Character]()
         
-        
-        
-        let query = games.filter(id == 0)//difficulty == 1 && action == 1)
+        for i in gamePlayers {
+            stringPlayersRequired.append(i.characters.first!)
+        }
+    }
+    
+    func filterGames() {
         
         do {
-            
-            for game in try db.prepare(query) {
-                //print(game[name])
-            }
-            
-        } catch {
-            print("Database Error")
+        let query = games.filter(difficulty == complexitySelected && action == drunknessSelected)
+        for game in try db.prepare(query) {
+            print("Filtered Games: ", game[name])
         }
         
-        
-        
-        
-        
-        
-        
-        
+        } catch {
+            print("Cannot filter games")
+        }
     }
 }

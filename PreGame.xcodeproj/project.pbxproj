@@ -26,7 +26,6 @@
 		F60F4DC91E51F761000594FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F60F4DC81E51F761000594FD /* Assets.xcassets */; };
 		F60F4DCC1E51F761000594FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F60F4DCA1E51F761000594FD /* LaunchScreen.storyboard */; };
 		F60F4DD71E522AE4000594FD /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = F60F4DD61E522AE4000594FD /* README.md */; };
-		F62A28A81E75C14A00DF0805 /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A28A71E75C14A00DF0805 /* CategoryTableViewController.swift */; };
 		F658B03F1EC0013B00DD72E7 /* FavouriteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F658B03E1EC0013B00DD72E7 /* FavouriteTableViewController.swift */; };
 		F66A119B1E8D344300616BA8 /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66A119A1E8D344300616BA8 /* GameData.swift */; };
 		F67518C41EB68EFC00EC9115 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67518C31EB68EFC00EC9115 /* Database.swift */; };
@@ -131,7 +130,6 @@
 		F60F4DCB1E51F761000594FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F60F4DCD1E51F761000594FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F60F4DD61E522AE4000594FD /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		F62A28A71E75C14A00DF0805 /* CategoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryTableViewController.swift; path = ../CategoryTableViewController.swift; sourceTree = "<group>"; };
 		F658B03E1EC0013B00DD72E7 /* FavouriteTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouriteTableViewController.swift; sourceTree = "<group>"; };
 		F66A119A1E8D344300616BA8 /* GameData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameData.swift; sourceTree = "<group>"; };
 		F67518C31EB68EFC00EC9115 /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
@@ -220,7 +218,6 @@
 				F60E05481E5F819D004E3C45 /* GameDetailViewController.swift */,
 				F60E054C1E611FBF004E3C45 /* GameDetailTableViewCell.swift */,
 				F658B03E1EC0013B00DD72E7 /* FavouriteTableViewController.swift */,
-				F62A28A71E75C14A00DF0805 /* CategoryTableViewController.swift */,
 				F60CFF1E1E68E1B70045D6D7 /* FilterViewController.swift */,
 				F60E054A1E60B6CE004E3C45 /* FilterTableViewController.swift */,
 				F60E054E1E6128EE004E3C45 /* Game.swift */,
@@ -377,7 +374,6 @@
 				F60E054D1E611FBF004E3C45 /* GameDetailTableViewCell.swift in Sources */,
 				F60F4DD71E522AE4000594FD /* README.md in Sources */,
 				F60E054B1E60B6CE004E3C45 /* FilterTableViewController.swift in Sources */,
-				F62A28A81E75C14A00DF0805 /* CategoryTableViewController.swift in Sources */,
 				F60E05491E5F819D004E3C45 /* GameDetailViewController.swift in Sources */,
 				F60F4DC41E51F761000594FD /* GameTableViewController.swift in Sources */,
 				F67518C41EB68EFC00EC9115 /* Database.swift in Sources */,
